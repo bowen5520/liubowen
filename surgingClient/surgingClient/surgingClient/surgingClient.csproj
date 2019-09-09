@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+<PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TieredCompilation>true</TieredCompilation>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="skyapm.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="skyapm.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+    <PackageReference Include="surging" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.Caching" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.Codec.MessagePack" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.Codec.ProtoBuffer" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.Consul" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.DotNetty" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.EventBusKafka" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.EventBusRabbitMQ" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.KestrelHttpServer" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.Log4net" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.Nlog" Version="1.1.0" />
+    <PackageReference Include="Surging.Core.Protocol.Http" Version="1.1.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="cacheSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="eventBusSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="nLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="surgingSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="surgingDemo.IModuleServices.UserManager">
+      <HintPath>..\..\..\surgingDemo.IModuleServices.UserManager\obj\Debug\netcoreapp2.2\surgingDemo.IModuleServices.UserManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
