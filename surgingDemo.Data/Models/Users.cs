@@ -8,6 +8,7 @@ namespace surgingDemo.Data.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public string Sex { get; set; }
+
         public DateTime CreateDate { get; set; }
     }
 }
